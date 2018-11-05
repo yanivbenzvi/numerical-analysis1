@@ -2,7 +2,7 @@
 
 ### Prerequisites
 
-The Panda Model's framework has a few system requirements:
+system requirements:
 
 * [Python](https://www.python.org/downloads/) >= 3.7
 * [anaconda](https://www.anaconda.com/download/) >= 5.3 for python 3.7!
