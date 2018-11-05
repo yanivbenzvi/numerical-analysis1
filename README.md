@@ -8,13 +8,12 @@ system requirements:
 * [anaconda](https://www.anaconda.com/download/) >= 5.3 for python 3.7!
 * [scipy](https://www.scipy.org/) 
 
-After Python installion, open cmd and navigate to folder project and run the follow command.:
+After Python installion, open cmd and navigate to project folder and run the follow command.:
 ```
 python pip install -r requirements.txt
 ```
 
 ### Project Structure 
-
 
 The tree below displays the main files and folders structure.
 ```textile
@@ -24,5 +23,3 @@ The tree below displays the main files and folders structure.
 ├── requirements.txt                    // Project requirements - installation by python pip.
 ├── .gitignore                          // Files to not track in git.
 ```
-
-efwef
