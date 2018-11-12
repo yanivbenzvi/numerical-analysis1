@@ -8,7 +8,7 @@ class ScantMethodTest(unittest.TestCase):
 
     def test_regular(self):
         self.assertEqual(scantObj.secant(lambda x: x ** 2 - 20, 4.5, 0.1, 20), 4.47213595499958)
-        self.assertEqual(scantObj.secant(lambda x: x ** 2 - x - 1, 1, 2, 5), 4.47213595499958)
+        self.assertEqual(scantObj.secant(lambda x: x ** 2 - x - 1, 1, 2, 5), 1.6180257510729614)
 
 
 if __name__ == '__main__':
