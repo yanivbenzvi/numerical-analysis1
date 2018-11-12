@@ -22,6 +22,7 @@ python pip install -r requirements.txt
 
 The tree below displays the main files and folders structure.
 ```textile
+├── docs                                // docs folder
 ├── lib                                 // code libary for the math calculation function.
 ├── test                                // test folder
 ├── main.py                             // main file
