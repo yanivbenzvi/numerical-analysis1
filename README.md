@@ -28,3 +28,4 @@ The tree below displays the main files and folders structure.
 ├── requirements.txt                    // Project requirements - installation by python pip.
 ├── .gitignore                          // Files to not track in git.
 ```
+
