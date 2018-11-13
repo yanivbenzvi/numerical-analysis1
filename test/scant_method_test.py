@@ -12,6 +12,9 @@ class ScantMethodTest(unittest.TestCase):
     def test_exponential_function2(self):
         self.assertEqual(scantObj.secant(lambda x: x ** 2 - x - 1, 1, 2, 5), 1.6180257510729614)
 
+    def test_exponential_function3(self):
+        self.assertEqual(scantObj.secant(lambda x: (x ** 2) + 5, 1, 2, 5), None)
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -1,6 +1,7 @@
 class ScantMethod:
     def secant(self, f, a, b, n):
-        '''Approximate solution of f(x)=0 on interval [a,b] by the secant method.
+        '''
+        Approximate solution of f(x)=0 on interval [a,b] by the secant method.
 
         Parameters
         ----------
