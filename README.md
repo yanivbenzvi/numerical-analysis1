@@ -29,4 +29,11 @@ The tree below displays the main files and folders structure.
 ├── requirements.txt                    // Project requirements - installation by python pip.
 ├── .gitignore                          // Files to not track in git.
 ```
+## Authors
 
+- **[Yaniv Ben Zvi](https://github.com/yanivbenzvi)** 
+- **[Boris Leviken](https://github.com/Borisl90)** 
+- **[shiri rom](https://github.com/shiro1000)**
+- **[Omri Elmalam](https://github.com/Omrielmalam)** 
+- **[Liron Glickman](https://github.com/LironGlickman)**
+- **[Nizan Rosh](https://github.com/nizanrosh)**
