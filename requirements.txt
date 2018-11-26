@@ -5,3 +5,4 @@ jupyter
 pandas
 sympy
 nose
+numpy
