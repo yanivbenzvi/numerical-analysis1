@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import cv2
 
 # Create functions and set domain length
 x = np.arange(-5, 5, 0.1)
