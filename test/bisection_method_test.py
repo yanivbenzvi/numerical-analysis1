@@ -6,11 +6,13 @@ class TestBisection_f1(unittest.TestCase):
     def test_bisection(self):
         def f1(x):
             return x ** 2 - 9
+      #  def f1a(x):
+       #     return x**6-4*(x**5)+3*(x**2)+6
 
         self.assertIsNotNone(bisection(f1, 2, 6))
         self.assertEqual(bisection(f1, 2, 6), 3)
         self.assertGreater(bisection(f1, 2, 6), 2.999)
-        self.assertAlmostEquals(bisection(shlomofunc,-5,6),2)
+        self.assertAlmostEquals(bisection(f1, -1, 6), 3)
 
 
 
