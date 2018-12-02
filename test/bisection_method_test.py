@@ -10,6 +10,8 @@ class TestBisection_f1(unittest.TestCase):
         self.assertIsNotNone(bisection(f1, 2, 6))
         self.assertEqual(bisection(f1, 2, 6), 3)
         self.assertGreater(bisection(f1, 2, 6), 2.999)
+        self.assertAlmostEquals(bisection(shlomofunc,-5,6),2)
+
 
 
 class TestBisection_f2(unittest.TestCase):

@@ -1,12 +1,7 @@
 
 from __future__ import division
-from pprint import pprint
-from numpy import array, zeros, diag, diagflat, dot
-from math import sqrt
+
 import numpy as np
-import pprint
-import scipy
-import scipy.linalg
 
 
 # Define function
