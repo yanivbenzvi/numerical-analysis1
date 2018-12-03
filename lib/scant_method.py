@@ -33,16 +33,26 @@ class ScantMethod:
             print("Secant method fails.")
             return None
         x0 = a
+        print("the first guess")
+        print(x0)
         x1 = b
+        print("the second guess")
+        print(x1)
         for n in range(1, iterations + 1):
             m_n = x0 - func(x0) * (x1 - x0) / (func(x1) - func(x0))
+            print("the value we got is:")
+            print(m_n)
             f_m_n = func(m_n)
             if func(x0) * f_m_n < 0:
                 x0 = x0
                 x1 = m_n
+                print("change the valus for x1 the next itaration if the result<0")
+                print (str(x1) +"new value")
             elif func(x1) * f_m_n < 0:
                 x0 = m_n
                 x1 = x1
+                print("change the valus for x0 the next itaration if the result<0")
+                print (str(x0) +"new value")
             elif f_m_n == 0:
                 print("Found exact solution.")
                 return m_n
