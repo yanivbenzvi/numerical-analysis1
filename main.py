@@ -70,14 +70,30 @@ def calc_mu(f):
 
 def calc_r(i, j, h):
     def calc_x1(i):
+        return i * 50
+
+    def calc_x2(j):
+        return j * 50
+
+    def calc_y1(i):
+        return i * 50
+
+    def calc_y2(j):
+        return i * 50
+
+    return (calc_x1(i) - calc_x2(j))**2 + (calc_y1(i) - calc_y2(j))**2 + h ** 2
 
 
-    return (calc_x(i) - calc_x(j))  + h**2
-
-def calc_d_pos(c, k, mu, i, j):
+def calc_d_pos(c, k, mu, i, j, h):
+    r = calc_r(i, j, h)
+    return c * (1 + k * calc_r(i, j, h) * (e ** (mu * r))) / (r ** 2)
 
 
 def calc_d_mat(c, k, mu):
+    d_mat = []
+    d_mat[0] = [calc_d_pos(c, k, mu, 1, 1), calc_d_pos(c, k, mu, 1, 2)]
+    d_mat[1] = [calc_d_pos(c, k, mu, 2, 1), calc_d_pos(c, k, mu, 2, 2)]
+    return d_mat
 
 
 def main():
