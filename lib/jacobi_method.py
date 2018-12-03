@@ -19,3 +19,5 @@ class jacobi_method:
             x = (b - dot(r, x)) / d
         return x
 
+
+'''https://gist.github.com/angellicacardozo/3a0891adfa38e2c4187612e57bf271d1'''
