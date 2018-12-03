@@ -7,3 +7,6 @@ class LinearApproximation:
         if (x == y).all():
             return None
         return np.poly1d(np.polyfit(x, y, 1))(x1)
+
+
+'''https://docs.scipy.org/doc/numpy/reference/generated/numpy.polyfit.html'''
