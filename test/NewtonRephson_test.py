@@ -11,5 +11,5 @@ class NewtonRaphsonTest_Equation_RootOfEquation(unittest.TestCase):
         self.assertEqual(NewtonRaphsonMethod(lambda x: math.pow(x,3) -3 * x +2,lambda x: 3*math.pow(x,2)-3,-2.4), -2.0000000000491913)
 
 
-if _name_ == '_main_':
+if __name__ == '_main_':
     unittest.main()
