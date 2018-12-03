@@ -19,19 +19,22 @@ def round_list(arr):
 
 def calc_c(f):
     ## calc f root by one method ScantMethod
+    print("##################### scant method print ###################")
     scant_method_result = [ScantMethod.secant(f, 0, 0.5, 1000),
                            ScantMethod.secant(f, 0.6, 1.2, 1000),
                            ScantMethod.secant(f, -1.5, 0, 1000)]
     scant_method_result = filter_negative_number(scant_method_result)
     scant_method_result = round_list(scant_method_result)
+    print("##################### end scant method print ###################")
 
     ## calc f root by one method bisection
-    f_ = lambda x: 48 * (x ** 2) - 32 * x
+    print("##################### bisection method print ###################")
     bisection_method_result = [bisection(f, 0, 0.5),
                                bisection(f, 0.6, 1.2),
                                bisection(f, -1.5, 0)]
     bisection_method_result = filter_negative_number(bisection_method_result)
     bisection_method_result = round_list(bisection_method_result)
+    print("##################### end bisection method print ###################")
     print(scant_method_result)
     print(bisection_method_result)
     if scant_method_result == bisection_method_result:
@@ -54,7 +57,6 @@ def calc_mu(f):
     scant_method_result = round_list(scant_method_result)
 
     ## calc f root by one method bisection
-    f_ = lambda x: 48 * (x ** 2) - 32 * x
     bisection_method_result = [bisection(f, 0.2, 1),
                                bisection(f, 1, 3)]
     bisection_method_result = filter_negative_number(bisection_method_result)
@@ -69,30 +71,48 @@ def calc_mu(f):
 
 
 def calc_r(i, j, h):
-    def calc_x1(i):
-        return i * 50
-
-    def calc_x2(j):
-        return j * 50
-
-    def calc_y1(i):
-        return i * 50
-
-    def calc_y2(j):
-        return i * 50
-
-    return (calc_x1(i) - calc_x2(j))**2 + (calc_y1(i) - calc_y2(j))**2 + h ** 2
+    if (i == j):
+        return 200 ** 2
+    elif (i == 1 and j == 4):
+        return 2 * (100 * 2) + h * 2
+    elif (i == 4 and j == 1):
+        return 2 * (100 * 2) + h * 2
+    elif (i == 2 and j == 3):
+        return 2 * (100 * 2) + h * 2
+    elif (i == 3 and j == 2):
+        return 2 * (100 * 2) + h * 2
+    else:
+        return 100 * 2 + h * 2
 
 
 def calc_d_pos(c, k, mu, i, j, h):
     r = calc_r(i, j, h)
-    return c * (1 + k * calc_r(i, j, h) * (e ** (mu * r))) / (r ** 2)
+    return round_digit(c * (1 + k * calc_r(i, j, h) * (e ** (mu * r))) / (r ** 2))
 
 
 def calc_d_mat(c, k, mu):
-    d_mat = []
-    d_mat[0] = [calc_d_pos(c, k, mu, 1, 1), calc_d_pos(c, k, mu, 1, 2)]
-    d_mat[1] = [calc_d_pos(c, k, mu, 2, 1), calc_d_pos(c, k, mu, 2, 2)]
+    d_mat = np.zeros(shape=(4, 4))
+    print(calc_d_pos(c, k, mu, 1, 1, 200))
+    d_mat[0][0] = calc_d_pos(c, k, mu, 1, 1, 200)
+    d_mat[0][1] = calc_d_pos(c, k, mu, 1, 2, 200)
+    d_mat[0][2] = calc_d_pos(c, k, mu, 1, 3, 200)
+    d_mat[0][3] = calc_d_pos(c, k, mu, 1, 4, 200)
+
+    d_mat[1][0] = calc_d_pos(c, k, mu, 2, 1, 200)
+    d_mat[1][1] = calc_d_pos(c, k, mu, 2, 2, 200)
+    d_mat[1][2] = calc_d_pos(c, k, mu, 2, 3, 200)
+    d_mat[1][3] = calc_d_pos(c, k, mu, 2, 4, 200)
+
+    d_mat[2][0] = calc_d_pos(c, k, mu, 3, 1, 200)
+    d_mat[2][1] = calc_d_pos(c, k, mu, 3, 2, 200)
+    d_mat[2][2] = calc_d_pos(c, k, mu, 3, 3, 200)
+    d_mat[2][3] = calc_d_pos(c, k, mu, 3, 4, 200)
+
+    d_mat[3][0] = calc_d_pos(c, k, mu, 4, 1, 200)
+    d_mat[3][1] = calc_d_pos(c, k, mu, 4, 2, 200)
+    d_mat[3][2] = calc_d_pos(c, k, mu, 4, 3, 200)
+    d_mat[3][3] = calc_d_pos(c, k, mu, 4, 4, 200)
+    print(d_mat)
     return d_mat
 
 
@@ -110,10 +130,11 @@ def main():
     c = calc_c(f1)
     k = calc_k(x, y, k_const)
     mu = calc_mu(f2)
-    d = calc_d_mat(c, k, mu)
     print(mu)
     print("Equation c element : {0}".format(c))
     print("Equation k element : {0}".format(k))
+    d = calc_d_mat(c, k, mu)
+    print(d)
 
 
 if __name__ == "__main__":

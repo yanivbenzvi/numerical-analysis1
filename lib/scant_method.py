@@ -38,6 +38,7 @@ class ScantMethod:
         for n in range(1, iterations + 1):
             m_n = x0 - func(x0) * (x1 - x0) / (func(x1) - func(x0))
             f_m_n = func(m_n)
+            print("current a: {0} b: {1}".format(m_n, f_m_n))
             if func(x0) * f_m_n < 0:
                 x0 = x0
                 x1 = m_n
@@ -52,6 +53,3 @@ class ScantMethod:
                 return None
 
         return x0 - func(x0) * (x1 - x0) / (func(x1) - func(x0))
-
-
-
