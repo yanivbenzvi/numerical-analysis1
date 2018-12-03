@@ -1,5 +1,6 @@
 class ScantMethod:
-    def secant(self, func, a, b, iterations):
+    @staticmethod
+    def secant(func, a, b, iterations):
         '''
         Approximate solution of f(x)=0 on interval [a,b] by the secant method.
 
