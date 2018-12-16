@@ -9,7 +9,7 @@ import math
 
 
 def round_digit(x):
-    return float("%.3f" % x)
+    return float("%.4f" % x)
 
 
 def filter_negative_number(arr):
@@ -39,10 +39,11 @@ def calc_c(f):
     print(scant_method_result)
     print(bisection_method_result)
     if round_list(scant_method_result) == round_list(bisection_method_result):
-        print("C: the method solution result are equal")
+        print("C: the method solution result are equal.\n {0}".format(scant_method_result))
         return sum(scant_method_result) / len(scant_method_result)
     else:
         print("the result are not equal")
+        exit()
 
 
 def calc_k(x, y, k_const):
@@ -69,6 +70,7 @@ def calc_mu(f):
         return (arr.min() / 100)
     else:
         print("the result are not equal")
+        exit()
 
 
 def calc_r(i, j, h):
@@ -118,25 +120,24 @@ def main():
     print("Equation c element : {0}".format(c))
     print("Equation k element : {0}".format(k))
     d = calc_d_mat(c, k, mu, h)
+
     d_inverse = np.linalg.inv(d)
     print("matrix d solution:")
     print(d)
     print("matrix d inverse solution:")
-    print(d_inverse)
+    print(d_inverse,end='\n\n\n')
 
-    #################### c calculate #######################
-    print("final solution - c = (D^-1) X M c vector:")
+    #################### c calculate 1 #######################
+    print("final solution calc c = (D^-1) X M :")
     c = np.matmul(d_inverse, m)
     print(c)
     print("check result (D^-1) X D = I")
     print(np.matmul(d, d_inverse))
 
-
-    print("Calc M with C (c calc with D inverse Matrix): D X C = {0}".format(np.matmul(d, c)))
+    #################### c calculate 2 #######################
     c = gauss(d, m, [1, 1, 1, 1], 1000)
     print("gauss method solution:")
     print(c)
-    print("Calc M with c (c calc with gauss method): D X C = {0}".format(np.matmul(d, c)))
 
 
 if __name__ == "__main__":
