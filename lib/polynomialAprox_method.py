@@ -11,5 +11,5 @@ class polynomialAproxMethod:
         print("Polynom: ", end='')
         for i in range(len(res) - 1):
             print("{}x^{} + ".format(res[i], i), end='')
-        print("{}x^{}".format(res[len(res) - 1], len(res) - 1), end='')
+        print("{}x^{}".format(res[len(res) - 1], len(res) - 1))
         return res

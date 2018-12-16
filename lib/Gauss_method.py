@@ -7,8 +7,8 @@ def gauss(A, b, x, n):
     U = A - L
     for i in range(n):
         x = np.dot(np.linalg.inv(L), b - np.dot(U, x))
-        print( str(i).zfill(3)),
-        print(x)
+        # print( str(i).zfill(3)),
+        # print(x)
     return x
 
 '''___MAIN___'''
