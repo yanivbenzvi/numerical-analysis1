@@ -1,15 +1,13 @@
 import unittest
-from lib.Sor_method import sorMethod
+from lib.Sor_method import SOR
+import numpy as np
+
 
 class MyTestCase(unittest.TestCase):
     def test_sorMethod_function1(self):
-        A = [10.0, -1.0, 2.0, 0.0]
-        [-1.0, 11.0, -1.0, 3.0]
-        [2.0, -1, 10.0, -1.0]
-        [0.0, 3.0, -1.0, 8.0]
-
-        b = [6.0, 25.0, -11.0, 15.0]
-        self.assertEqual(sorMethod.sorMethod(A,B), False)
+        a = np.matrix([[5, 2, 4], [3, 10, -5], [5, 2, 9]])
+        b = [-7, 3, -3.5]
+        self.assertEqual(SOR(a, b), [-2.522720098768155, 1.4068126714022822, 0.6999962475642652])
 
 
 if __name__ == '__main__':

@@ -1,5 +1,6 @@
 class ScantMethod:
-    def secant(self, func, a, b, iterations):
+    @staticmethod
+    def secant(func, a, b, iterations):
         '''
         Approximate solution of f(x)=0 on interval [a,b] by the secant method.
 
@@ -43,6 +44,7 @@ class ScantMethod:
             print("the value we got is:")
             print(m_n)
             f_m_n = func(m_n)
+            print("current a: {0} b: {1}".format(m_n, f_m_n))
             if func(x0) * f_m_n < 0:
                 x0 = x0
                 x1 = m_n
@@ -61,6 +63,3 @@ class ScantMethod:
                 return None
 
         return x0 - func(x0) * (x1 - x0) / (func(x1) - func(x0))
-
-
-
