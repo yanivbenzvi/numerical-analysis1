@@ -4,26 +4,26 @@ from sympy import polys, Symbol, poly
 from numpy import poly1d
 import numpy as np
 
-r"""
-        Return a Cubic Spline.
-        Given two 1-D arrays `x` and `y` of the same length, returns the Cubic spline
-        polynomials through the points ``(x, y)``.
-        Warning: For every i!=j, x[i]!=x[j] and y[i]!=y[j].
-        ----------
-        x : array_like
-            `x` represents the x-coordinates of a set of datapoints.
-        y : array_like
-            `y` represents the y-coordinates of a set of datapoints, i.e. f(`x`).
-        Returns
-        -------
-        f : function 
-            'f' represents the function for calculating f(x) for every x in range (x[0],x[n]).
-        s : list of poly1d objects (polynomials)
-            's' contains the splines(S[i](x)) for i in range(0,n)     
-        """
-
 
 def CubicSpline(x, y):
+    """
+    Return a Cubic Spline.
+    Given two 1-D arrays `x` and `y` of the same length, returns the Cubic spline
+    polynomials through the points ``(x, y)``.
+    Warning: For every i!=j, x[i]!=x[j] and y[i]!=y[j].
+    ----------
+    x : array_like
+        `x` represents the x-coordinates of a set of datapoints.
+    y : array_like
+        `y` represents the y-coordinates of a set of datapoints, i.e. f(`x`).
+    Returns
+    -------
+    f : function
+        'f' represents the function for calculating f(x) for every x in range (x[0],x[n]).
+    s : list of poly1d objects (polynomials)
+        's' contains the splines(S[i](x)) for i in range(0,n)
+    """
+
     def generateSplines(x, y):
         sx = interpolate.CubicSpline(x, y)
         # generating the coefficients of the bspline

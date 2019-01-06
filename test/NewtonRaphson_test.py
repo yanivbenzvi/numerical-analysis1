@@ -1,5 +1,5 @@
 import unittest
-from lib.NewtonRaphson import NewtonRaphsonMethod
+from lib.newtonpoly import NewtonRaphsonMethod
 import math
 
 
