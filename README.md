@@ -98,6 +98,7 @@ The tree below displays the main files and folders structure.
 ├── .gitignore                          // Files to not track in git.
 ```
 #Running the test
+
 This project contain unit test for every method we use.
 The tests is based on analytic solution.
 In order to run the tests we used Pycharm ide.
