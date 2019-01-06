@@ -9,7 +9,7 @@ def gauss(A, b, x, n):
     prev = None
     for i in range(n):
         x = np.dot(np.linalg.inv(L), b - np.dot(U, x))
-        if count > 10:
+        if count > 3:
             break
         if prev is None:
             prev = x
