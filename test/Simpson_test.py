@@ -1,6 +1,6 @@
 import unittest
 import numpy as np
-from lib.Simpson import simps
+from lib.Simpson_method import simps
 
 
 class SimpsonTest(unittest.TestCase):

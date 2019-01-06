@@ -1,5 +1,5 @@
 import unittest
-import cubicSpline_method
+import CubicSpline_method
 
 
 class Test(unittest.TestCase):
@@ -7,7 +7,7 @@ class Test(unittest.TestCase):
     def test_param(self):
         x = [-0.5, 0.0, 0.5, 1.0, 1.5]
         y = [3.2, 2.7, 6, 5, 6.5]
-        sp = cubicSpline_method.Spline(x, y)
+        sp = CubicSpline_method.Spline(x, y)
         self.assertEqual(sp.a[0], 3.2)
         self.assertEqual(sp.a[1], 2.7)
         self.assertEqual(sp.a[2], 6.0)
@@ -25,7 +25,7 @@ class Test(unittest.TestCase):
     def test_example(self):
         x = [1., 2., 3., 4.]
         y = [1., 0.5, 1 / 3, 0.25]
-        sp = cubicSpline_method.Spline(x, y)
+        sp = CubicSpline_method.Spline(x, y)
         self.assertEqual(sp.a[0], 1)
         self.assertEqual(sp.a[1], 0.5)
         self.assertEqual(sp.a[2], 1 / 3)
