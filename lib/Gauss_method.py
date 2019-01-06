@@ -13,10 +13,10 @@ def gauss(A, b, x, n):
             break
         if prev is None:
             prev = x
-        elif (prev.tolist() == x.tolist()):
-            ++count
-            continue
+        elif np.array_equal(prev, x):
+            count += 1
         prev = x
+        print("count :", count)
         print(x)
     print(x)
     return x
@@ -28,6 +28,6 @@ if __name__ == '__main__':
     b = [1.0, 2.0, 3.0]
     x = [1, 1, 1]
 
-    n = 20
+    n = 200
     print(gauss(A, b, x, n))
-    print(solve(A, b))
+    print("Solution in regular: ", solve(A, b))

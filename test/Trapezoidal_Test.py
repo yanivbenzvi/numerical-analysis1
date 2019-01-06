@@ -1,6 +1,6 @@
 import unittest
 import numpy as np
-from Trapezoidal import trapezoid_integral
+from Trapezoidal_method import trapezoid_integral
 
 
 class trapezoid_integralTest(unittest.TestCase):
