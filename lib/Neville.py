@@ -25,9 +25,16 @@ def neville(datax, datay, x):
             if k == 0:
                 p[i] = datay[i]
             else:
-                p[i] = ((x-datax[i+k])*p[i]+ \
-                        (datax[i]-x)*p[i+1])/ \
+                p[i] = ((x-datax[i+k])*p[i] +  \
+                        (datax[i]-x)*p[i+1]) / \
                         (datax[i]-datax[i+k])
+            print(p)
     return p[0]
 
+
+if __name__ == "__main__":
+    datax = [8.1, 8.3, 8.6, 8.7]
+    datay = [16.9446, 17.56492, 18.50515, 18.82091]
+
+    print(neville(datax, datay, 8.4))
 

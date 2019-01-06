@@ -1,3 +1,4 @@
+from lib import Neville
 from lib.scant_method import ScantMethod
 from lib.bisection_method import bisection
 from lib.polynomialAprox_method import polynomialAproxMethod
@@ -102,8 +103,6 @@ def calc_d_mat(c, k, mu, h):
 
 
 def main():
-
-
     ## cont func varaible
     x = [1, 3, 5]
     y = [10.5, 6.1, 3.5]
@@ -127,7 +126,7 @@ def main():
     print("matrix d solution:")
     print(d)
     print("matrix d inverse solution:")
-    print(d_inverse,end='\n\n\n')
+    print(d_inverse, end='\n\n\n')
 
     #################### c calculate 1 #######################
     print("final solution calc c = (D^-1) X M :")
@@ -144,11 +143,13 @@ def main():
     f9 = lambda x: x ** 3 - math.cos(x)
     print("----------------------Test-------------------------")
 
+    datax = [8.1, 8.3, 8.6, 8.7]
+    datay = [16.9446, 17.56492, 18.50515, 18.82091]
 
-
-    print(ScantMethod.secant(f9, 0, 1, 10))
+    print(Neville(datax, datay, 8.4))
 
     print("----------------------Test-------------------------")
+
 
 if __name__ == "__main__":
     main()

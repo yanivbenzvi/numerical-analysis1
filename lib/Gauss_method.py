@@ -1,8 +1,8 @@
 import numpy as np
 from scipy.linalg import solve
 
-def gauss(A, b, x, n):
 
+def gauss(A, b, x, n):
     L = np.tril(A)
     U = A - L
     for i in range(n):
@@ -10,6 +10,7 @@ def gauss(A, b, x, n):
         # print( str(i).zfill(3)),
         # print(x)
     return x
+
 
 '''___MAIN___'''
 

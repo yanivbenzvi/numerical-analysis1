@@ -244,3 +244,4 @@ if __name__ == '__main__':
 
     print(SOR(a, b))
     print(gaus(a, b))
+
