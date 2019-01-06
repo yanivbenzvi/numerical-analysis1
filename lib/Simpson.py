@@ -1,4 +1,5 @@
 import numpy as np
+import matplotlib.pyplot as plt
 
 
 def simps(f, a, b, N=50):
@@ -36,4 +37,18 @@ def simps(f, a, b, N=50):
         y[0:-1:2] + 4 * y[1::2] + y[2::2])  # Calculate the intervals according to the formula of Simpson
     return S
 
-if __name__ == '__name__':
+
+if __name__ == '__main__':
+    f = lambda x: 3 * x ** 2
+    n = 10
+    print("The total sum of the function : ", simps(f, 0, 1, n))
+
+    x = np.linspace(0, 1, n)
+    y = f(x)
+    plt.plot(x, y)
+    for i in range(n - 1):
+        xs = [x[i], x[i], x[i + 1], x[i + 1]]
+        ys = [0, f(x[i]), f(x[i + 1]), 0]
+        plt.fill(xs, ys, 'b', edgecolor='b', alpha=0.2)
+    plt.title('Simson method, N = {} (N=400,000)'.format(n))
+    plt.show()

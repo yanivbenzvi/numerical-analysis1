@@ -63,10 +63,3 @@ if __name__ == '__main__':
         plt.fill(xs, ys, 'b', edgecolor='b', alpha=0.2)
     plt.title('Romberg method, N = {} (N=400,000)'.format(20))
     plt.show()
-
-
-    def g(x):
-        return np.exp(x) * (1 + np.sin(x))
-
-
-    print(romberIntegration(g, 0, 1))
