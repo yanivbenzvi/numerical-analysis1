@@ -1,6 +1,6 @@
 import unittest
 import numpy as np
-from Simpson import simps
+from lib.Simpson import simps
 
 
 class SimpsonTest(unittest.TestCase):
@@ -12,6 +12,9 @@ class SimpsonTest(unittest.TestCase):
 
     def test_Simpson_Test3(self):
         self.assertRaises(ZeroDivisionError, simps(lambda x : x,0,0,0))
+
+    def test_Simpson_Test4(self):
+        self.assertRaises(ValueError, simps(lambda x : 3*x**2,0,1,10))
 
 
 if __name__ == '__main__':
