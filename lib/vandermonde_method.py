@@ -8,63 +8,30 @@ def matrix(x):
     return np.vander(x, increasing=True)
 
 
-def det(x):
-    return np.prod([
-        x[j] - x[i] for i in range(len(x)) for j in range(i + 1, len(x))
-    ])
-
-
-def solve(alpha, b):
-    assert len(alpha) == len(b)
-    n = len(b)
-
-    x = b.copy()
-
-    for k in range(1, n):
-        x[k:n] -= x[k - 1:n - 1]
-        x[k:n] /= alpha[k:n] - alpha[0:n - k]
-
-    for k in range(n - 1, 0, -1):
-        x[k - 1:n - 1] -= alpha[k - 1] * x[k:n]
-
-    return x
-
-
-def solve_transpose(alpha, b):
-    assert len(alpha) == len(b)
-    n = len(b)
-
-    x = b.copy()
-
-    for k in range(n):
-        x[k + 1:n] -= alpha[k] * x[k:n - 1]
-
-    for k in range(n - 1, 0, -1):
-        x[k:n] /= alpha[k:n] - alpha[:n - k]
-        x[k - 1:n - 1] -= x[k:n]
-
-    return x
+def solve_by_inverse(V):
+    return np.dot(np.linalg.inv(V), ref_sol)
 
 
 if __name__ == '__main__':
     f1 = lambda x: 12 * x ** 4 - x ** 3
     n = 10
     # x = np.array([1., 2., 4.])
-    numberOfPoint = 6
+    numberOfPoint = 3
     numberOfPoint *= 2
     x = np.array(list(range(1, numberOfPoint + 1, 2)))
     print("x: {}".format(x))
     # ref_sol = np.array([f1(x[0]), f1(x[1]), f1(x[2])])
     ref_sol = map(lambda x: f1(x), x)
     ref_sol = np.fromiter(ref_sol, dtype=np.float)
+    print("y: {}".format(ref_sol))
 
     V = matrix(x)
-    print("vandermonde solution of V dot x = b:")
+    print("vandermonde solution of V dot x = b:", end="\n\n")
     print("[V] vandermonde Matrix :")
     print(V)
     print("[b] solution vector:")
     print(ref_sol)
-    b = np.dot(np.linalg.inv(V), ref_sol)
+    b = solve_by_inverse(V)
     print("solution x: {}".format(b.tolist()))
 
     text = ''
