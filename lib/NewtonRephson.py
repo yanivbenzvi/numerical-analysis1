@@ -4,7 +4,17 @@ from sympy.parsing.sympy_parser import parse_expr
 
 
 def NewtonRaphsonMethod1(f , f_d ,up,down, OL=0.01, NMAX=10):
+    '''
+    this method get function, derivative function, 2 bounds,deviation and maMaximum iterations and return the approximately x in the bound
+    :param f: The function
+    :param f_d: The derivative function
+    :param up: Upper bound
+    :param down: down bound
+    :param OL: deviation
+    :param Maximum iterations
 
+    :return:אthis method return the approximately x in the bound
+    '''
     a = float(down)
     b = float(up)
 
