@@ -19,7 +19,7 @@ def simps(f,a,b,N=50):
     Returns
     -------
     float
-        Approximation of the integral of f(x) from a to b using
+        Approximation of the integral of f(x) from a to b using test
         Simpson's rule with N subintervals of equal length.
     '''
     if N % 2 == 1:
