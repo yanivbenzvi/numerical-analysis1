@@ -31,7 +31,7 @@ def neville(datax, datay, x):
                 p[i] = datay[i]
             else:
                 p[i] = ((x - datax[i + k]) * p[i] + (datax[i] - x) * p[i + 1]) / (datax[i] - datax[i + k])
-            print(p[i])
+            print(f"P{k},{i}: {p[i]}")
     return p[0]
 
 
