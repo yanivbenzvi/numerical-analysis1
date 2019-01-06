@@ -6,15 +6,29 @@ from sympy.parsing.sympy_parser import parse_expr
 def NewtonRaphsonMethod1(f , f_d ,up,down, OL=0.01, NMAX=10):
     '''
     this method get function, derivative function, 2 bounds,deviation and maMaximum iterations and return the approximately x in the bound
-    :param f: The function
-    :param f_d: The derivative function
-    :param up: Upper bound
-    :param down: down bound
-    :param OL: deviation
-    :param Maximum iterations
+    ----------
+    f : The function
+        The function for which we are trying to approximate a solution.
+    f_d :derivative function
+        The derivative function of f(x)
+    a,b : numbers
+        The interval in which to search for a solution. The function returns
+    OL : (positive) integer
+        the deviation number
+    NMAN : (positive) integer
+        The number of iterations to implement.
+    Returns
+    -------
+    return the approximately x in the bound
 
-    :return:אthis method return the approximately x in the bound
+    Examples
+    --------
+    #>>> lambda x : 16*x**3-16*x**2+1
+    #>>> lambda x: 48*x**2-32*x
+    #>>> a,b(5,1)
+    0.9275641025641026
     '''
+
     a = float(down)
     b = float(up)
 
