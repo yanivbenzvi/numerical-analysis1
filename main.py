@@ -1,9 +1,8 @@
 from lib import Neville
 from lib.scant_method import ScantMethod
-from lib.bisection_method import bisection
+from Bisection_method import bisection
 from lib.polynomialAprox_method import polynomialAproxMethod
 from lib.Gauss_method import gauss
-from lib.Sor_method import *
 from numpy import e
 import numpy as np
 import math

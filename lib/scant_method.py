@@ -1,3 +1,7 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+
 class ScantMethod:
     @staticmethod
     def secant(func, a, b, iterations):
@@ -34,27 +38,24 @@ class ScantMethod:
             print("Secant method fails.")
             return None
         x0 = a
-        print("the first guess")
-        print(x0)
         x1 = b
-        print("the second guess")
-        print(x1)
+        print("the first guess : {}", format(x0))
+        print("the second guess : {}", format(x1))
         for n in range(1, iterations + 1):
             m_n = x0 - func(x0) * (x1 - x0) / (func(x1) - func(x0))
-            print("the value we got is:")
-            print(m_n)
+            print("the value we got is: {}".format(m_n))
             f_m_n = func(m_n)
-            print("current a: {0} b: {1}".format(m_n, f_m_n))
+            print("current a: {0} b: {1}".format(m_n, f_m_n), end='\n\n')
             if func(x0) * f_m_n < 0:
                 x0 = x0
                 x1 = m_n
                 print("change the valus for x1 the next itaration if the result<0")
-                print (str(x1) +"new value")
+                print(str(x1) + "new value")
             elif func(x1) * f_m_n < 0:
                 x0 = m_n
                 x1 = x1
                 print("change the valus for x0 the next itaration if the result<0")
-                print (str(x0) +"new value")
+                print("new value: ", str(x0))
             elif f_m_n == 0:
                 print("Found exact solution.")
                 return m_n
@@ -63,3 +64,19 @@ class ScantMethod:
                 return None
 
         return x0 - func(x0) * (x1 - x0) / (func(x1) - func(x0))
+
+
+if __name__ == '__main__':
+    f = lambda x: x ** 2 - 20
+    ScantMethod.secant(f, 4.5, 0.1, 20)
+
+
+
+    t1 = np.arange(-100, 100, 0.3)
+    t2 = []
+    for i in range(len(t1)):
+        t2.append(f(i))
+
+    plt.plot(t1, t2, '-r', label='f(x)=x^2 - 20')
+    plt.legend(loc='upper left')
+    plt.show()

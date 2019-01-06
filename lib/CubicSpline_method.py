@@ -60,7 +60,7 @@ if __name__ == '__main__':
     y = [945, 15336, 247104, 604125, 782336, 822245.52]
     cs, s = CubicSpline(x, y)
     for i in range(len(s)):
-        print("{0}<=x<={1} , S{2}(x):\n{3}".format(x[i], x[i + 1], i, s[i]))
+        print("{0} <= x <= {1} , S{2}(x): \n{3}".format(x[i], x[i + 1], i, s[i]))
 
 
     def f(x):

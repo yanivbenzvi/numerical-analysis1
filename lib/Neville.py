@@ -8,6 +8,7 @@ Columbus, OH
 
 __author__ = "Ningchuan Xiao <ncxiao@gmail.com>"
 
+
 def neville(datax, datay, x):
     """
     Finds an interpolated value using Neville's algorithm.
@@ -19,12 +20,17 @@ def neville(datax, datay, x):
       p[0]: the polynomial of degree n
     """
     n = len(datax)
-    p = n*[0]
+    m = len(datay)
+    if m != n:
+        return None
+
+    p = n * [0]
     for k in range(n):
-        for i in range(n-k):
+        for i in range(n - k):
             if k == 0:
                 p[i] = datay[i]
             else:
+<<<<<<< HEAD
                 p[i] = ((x-datax[i+k])*p[i] +  \
                         (datax[i]-x)*p[i+1]) / \
                         (datax[i]-datax[i+k])
@@ -38,3 +44,12 @@ if __name__ == "__main__":
 
     print(neville(datax, datay, 8.4))
 
+=======
+                p[i] = ((x - datax[i + k]) * p[i] + (datax[i] - x) * p[i + 1]) / (datax[i] - datax[i + k])
+            print(f"P{k},{i}: {p[i]}")
+    return p[0]
+
+
+if __name__ == '__main__':
+    print(neville([1, 2, 3, 6], [5, 9, 15, 45], 5))
+>>>>>>> bf0991e5bf281cfdf75fbd8a825c7f7d04a92ce6
