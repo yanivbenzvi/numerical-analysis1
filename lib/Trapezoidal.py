@@ -2,22 +2,21 @@ from cmath import sin
 
 
 def trapezoid_integral(f, a, b, n):
-    if n<= 0 or n :
+    if n <= 0  :
         return "Number of trapez must be positive integer"
     elif n % 2 == 0:
         x = a
         h = (b - a) / n
         T = f(a) + f(b)
+        print('<><><><><><><><><><><><><><><>')
         for i in range(1, n):
             x += h
             T += 2 * f(x)
-        return T * (h / 2)
+            print('The x is now :',T)
+            print('<><><><><><><><><><><><><><><>')
+        return 'The finel x is :',T * (h / 2)
     else:
         return 'n should be even positive integer'
-
-
-def composite_midpoint_integral(f, a, b, n):
-    return 1
 
 
 print((trapezoid_integral(lambda x: 10*x**2+3*x+2,0,1,4)))
