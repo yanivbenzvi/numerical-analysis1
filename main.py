@@ -1,5 +1,5 @@
 from lib.scant_method import ScantMethod
-from done.bisection_method import bisection
+from bisection_method import bisection
 from lib.polynomialAprox_method import polynomialAproxMethod
 from lib.Gauss_method import gauss
 from numpy import e

@@ -1,5 +1,5 @@
 import unittest
-from done.bisection_method import bisection
+from bisection_method import bisection
 
 
 class TestBisection_f1(unittest.TestCase):
