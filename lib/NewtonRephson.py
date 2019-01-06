@@ -22,7 +22,7 @@ def NewtonRaphsonMethod1(f , f_d ,up,down, OL=0.01, NMAX=10):
 
     print ("\n********starting ********\n")
 
-    while (abs(y) > OL and steps < NMAX ):
+    while (abs(y/derivY) > OL and steps < NMAX ):
         xnn = xn - (y / derivY)
         xn = xnn
         print ("new x is now at ",)
