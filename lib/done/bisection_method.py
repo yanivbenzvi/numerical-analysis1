@@ -1,5 +1,7 @@
 # " URL :https://github.com/TheAlgorithms/Python/blob/master/arithmetic_analysis/bisection.py"
 from numpy import *
+import numpy as np
+import matplotlib.pyplot as plt
 
 
 def bisection(function, a, b):  # finds where the function becomes 0 in [a,b] using bolzano
@@ -37,3 +39,19 @@ def bisection(function, a, b):  # finds where the function becomes 0 in [a,b] us
                 print(start)
             mid = (start + end) / 2  # finding new middel number
         return mid
+
+
+if __name__ == '__main__':
+    f = lambda x: (x ** 3) - 27
+    bisection(f, 2, 6)
+
+    t1 = np.arange(-30, 30, 0.5)
+    t2 = []
+    t3 = []
+    for i in range(len(t1)):
+        t2.append(f(i))
+    plt.subplots()
+    plt.plot(t1, t2, '-r', label='Original f(x)=x^3 - 27')
+    plt.legend(loc='upper left')
+    plt.grid()
+    plt.show()

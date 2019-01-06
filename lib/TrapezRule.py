@@ -40,11 +40,10 @@ def trapz(f, a, b, N=400000):
 '''Example'''
 if __name__ == '__main__':
     def f(x):
-        return 13 * pow(x, 12) - 1.25 * pow(x, 3)
+        return 13 * x ** 12 - 1.25 * x ** 3
 
 
     print("Definite integral of f using the Trapezoid rule for [3,12]: ", trapz(f, 3, 12))
-
     x = np.linspace(3, 12, 20)
     y = f(x)
     plt.plot(x, y)

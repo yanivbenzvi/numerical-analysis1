@@ -1,5 +1,5 @@
 import unittest
-from lib import vandermonde_method as vandermonde
+from done import vandermonde_method as vandermonde
 import numpy
 
 

@@ -14,9 +14,8 @@ def solve_by_inverse(V):
 
 if __name__ == '__main__':
     f1 = lambda x: 12 * x ** 4 - x ** 3
-    n = 10
     # x = np.array([1., 2., 4.])
-    numberOfPoint = 3
+    numberOfPoint = 6
     numberOfPoint *= 2
     x = np.array(list(range(1, numberOfPoint + 1, 2)))
     print("x: {}".format(x))

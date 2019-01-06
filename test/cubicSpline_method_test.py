@@ -1,5 +1,5 @@
 import unittest
-from lib import cubicSpline_method
+from done import cubicSpline_method
 
 
 class Test(unittest.TestCase):
