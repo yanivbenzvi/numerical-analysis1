@@ -102,6 +102,8 @@ def calc_d_mat(c, k, mu, h):
 
 
 def main():
+
+
     ## cont func varaible
     x = [1, 3, 5]
     y = [10.5, 6.1, 3.5]
@@ -139,6 +141,14 @@ def main():
     print("gauss method solution:")
     print(c)
 
+    f9 = lambda x: x ** 3 - math.cos(x)
+    print("----------------------Test-------------------------")
+
+
+
+    print(ScantMethod.secant(f9, 0, 1, 10))
+
+    print("----------------------Test-------------------------")
 
 if __name__ == "__main__":
     main()
