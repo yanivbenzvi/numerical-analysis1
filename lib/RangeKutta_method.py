@@ -34,5 +34,5 @@ def runge_kutta(f, a, b, N, y0):
 
 
 if __name__ == '__main__':
-    f = lambda x: x
+    f = lambda x, t: x / t
     print(runge_kutta(f, 0, 2, 3, 0.01))

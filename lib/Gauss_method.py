@@ -1,6 +1,15 @@
 import numpy as np
 from scipy.linalg import solve
+"""
+   The method is fairly straight forward, given a standard system of linear equations, Ax = b. Where, A is a matrix (often representing a series of equations),
+   x is a vector of x variables (Gauss-Seidel method is used to solve this vector) and b is the solution vector. In Gauss-Seidel method,
+   we then split the A matrix into Upper (U) and Lower (L) matrices (the lower matrix in this case also contains the diagonal), then iterate using the following method:
 
+inputs: A - the main matrix , b - the sulotion vector, x - the unit vector, n - the number of the itaration for finding the x vector.
+output: x - this is the vector we looking for in the Cross product of Ax=b with a knoun A and b.
+
+
+"""
 
 def gauss(A, b, x, n):
     L = np.tril(A)
