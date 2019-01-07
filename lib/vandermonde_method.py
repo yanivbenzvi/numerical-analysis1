@@ -5,10 +5,24 @@ import matplotlib.pyplot as plt
 
 
 def matrix(x):
+    """
+            Creates a vector from the X range that he has received
+            ----------
+            x : array_like
+                `x` Range of vector
+            -------
+            """
     return np.vander(x, increasing=True)
 
 
 def solve_by_inverse(V):
+    """
+            create reverse matrix
+            ----------
+            v : array_like
+                `v`
+            -------
+            """
     return np.dot(np.linalg.inv(V), ref_sol)
 
 
