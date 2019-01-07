@@ -1,6 +1,7 @@
 from numpy import *
 from math import *
 
+
 #
 # Runge-Kutta (Order Four)
 
@@ -13,8 +14,6 @@ from math import *
 # OUTPUT: Approximation w to y at the (N+1) values of t.
 
 # test command :runge_kutta(f, 0, 2 , 3 ,0.01)
-
-f = lambda t, y: y - t ** 2 + 1
 
 
 def runge_kutta(f, a, b, N, y0):
@@ -34,5 +33,5 @@ def runge_kutta(f, a, b, N, y0):
 
 
 if __name__ == '__main__':
-    f = lambda x, t: x / t
+    f = lambda t, y: y - t ** 2 + 1
     print(runge_kutta(f, 0, 2, 3, 0.01))

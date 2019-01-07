@@ -1,5 +1,7 @@
 """https://trinket.io/python/bccab55640"""
 from math import *
+
+
 def lagrange_interpolation(x, y, u):
     '''
     Parameters
@@ -25,8 +27,6 @@ def product(a):
 
 
 if __name__ == '__main__':
-
-
     x = [1, 2.5, 4, 9.7, 7]
     y = [0.0, 0.97, 1.39, 1.70, 1.95]
     u = 6

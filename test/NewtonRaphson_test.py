@@ -1,14 +1,16 @@
 import unittest
-from lib.newtonpoly import NewtonRaphsonMethod
-import math
+from NewtonRephson import NewtonRaphsonMethod1
 
 
-class NewtonRaphsonTest_Equation_RootOfEquation(unittest.TestCase):
-    def test_NewtonRaphson_Test(self):
-        self.assertEqual(NewtonRaphsonMethod(lambda x: math.pow(x,3) - x -2,lambda x: 3*math.pow(x,2)-1,1), 1.6363636363636362)
+class NewtonTest(unittest.TestCase):
+    def test_Newton_Test(self):
+        self.assertEqual(
+            NewtonRaphsonMethod1(lambda x: 16 * x ** 3 - 16 * x ** 2 + 1, lambda x: 48 * x ** 2 - 32 * x, 0, -5),
+            -0.22649903505000893)
 
-    def test_NewtonRaphson_Test2(self):
-        self.assertEqual(NewtonRaphsonMethod(lambda x: math.pow(x,3) -3 * x +2,lambda x: 3*math.pow(x,2)-3,-2.4), -2.0000000000491913)
+    def test_Newton_Test2(self):
+        self.assertEqual(
+            NewtonRaphsonMethod1(lambda x: 16 * x ** 3 - 16 * x ** 2 + 1, lambda x: 48 * x ** 2 - 32 * x, 5, 1), 0.9375)
 
 
 if __name__ == '__main__':

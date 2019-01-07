@@ -1,19 +1,23 @@
 import unittest
-from lib.jacobi_method import jacobi_method
-from numpy import array
+from lib.jacobi_method import jacobi, dominant
+import numpy as np
 
 
 class JacobiTestCase(unittest.TestCase):
     global a, b
-    a = array([[2.0, 1.0], [5.0, 7.0]])
-    b = array([11.0, 13.0])
+
+    a = np.matrix([[1, 3, 5], [1, 4, 2], [5, 2, 9]])
+    b = [1, 2, 3]
+    r = dominant(a, b)
+    a = r[0]
+    b = r[1]
 
     def test_jacob_function1(self):
-        guess = array([1.0, 1.0])
-        self.assertEqual(jacobi_method.jacobi(a, b, n=25, x=guess).tolist(), [7.111102020047106, -3.22220342490943])
+        guess = np.array([1.0, 1.0])
+        self.assertEqual(jacobi(a, b), [0.7999999711018695, 0.39999999887340987, -0.19999999354441983])
 
     def test_jacob_function2(self):
-        self.assertEqual(jacobi_method.jacobi(a, b, n=25, x=None).tolist(), [7.111104173193844, -3.2222003489855178])
+        self.assertEqual(jacobi(a, b), [0.7999999711018695, 0.39999999887340987, -0.19999999354441983])
 
 
 if __name__ == '__main__':
