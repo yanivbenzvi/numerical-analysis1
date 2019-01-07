@@ -1,5 +1,5 @@
-from lib import Neville
-from lib.scant_method import ScantMethod
+from lib import Neville_method
+from lib.Scant_method import ScantMethod
 from Bisection_method import bisection
 from lib.polynomialAprox_method import polynomialAproxMethod
 from lib.Gauss_method import gauss
@@ -145,7 +145,7 @@ def main():
     datax = [8.1, 8.3, 8.6, 8.7]
     datay = [16.9446, 17.56492, 18.50515, 18.82091]
 
-    print(Neville(datax, datay, 8.4))
+    print(Neville_method(datax, datay, 8.4))
 
     print("----------------------Test-------------------------")
 

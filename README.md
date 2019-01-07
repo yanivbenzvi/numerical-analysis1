@@ -55,44 +55,23 @@ The tree below displays the main files and folders structure.
 ├── docs                                // docs folder
 ├── lib                                 // code libary for the math calculation function.
 |   ├── Bisection_method.py
-|   ├── GaussSiedle_SOR.py
-|   ├── NewtonRephson_method
-|   ├── plot_it.py
-|   ├── Hackathon.py                # Unnecessary
-|   ├── Poly_aprox.py
-|   ├── Linear aprox.py
 |   ├── CubicSpline_method.py
-|   ├── LaGrange_method.py          # Unnecessary
-|   ├── Lagrange
+|   ├── Gauss_method.py
+|   ├── jacobi_method.py
+|   ├── Lagrange_interpolation.py
+|   ├── LinearApproximation.py
 |   ├── Neville_method.py
+|   ├── NewtonRephson.py
+|   ├── polynomialAprox_method.py
+|   ├── RangeKutta_method.py
 |   ├── Romberg_method.py
+|   ├── Scant_method.py
 |   ├── Simpson_method.py
-|   ├── Trapezoid_method.py
-|   ├── Gauss elimination.py
-|   ├── Jacobi.py
-|   ├── Main.py
-|   ├── Gaussian Quadrature.py
-|   └── Secant_method.py
+|   ├── Sor_method.py
+|   ├── Trapezoidal_method.py
+|   ├── Trapezoidal_method.py
+|   └── vandermonde_method.py
 ├── test                                // test folder
-|   ├── Bisection_method.py
-|   ├── GaussSiedle_SOR.py
-|   ├── NewtonRephson_method
-|   ├── plot_it.py
-|   ├── Hackathon.py                # Unnecessary
-|   ├── Poly_aprox.py
-|   ├── Linear aprox.py
-|   ├── CubicSpline_method.py
-|   ├── LaGrange_method.py          # Unnecessary
-|   ├── Lagrange
-|   ├── Neville_method.py
-|   ├── Romberg_method.py
-|   ├── Simpson_method.py
-|   ├── Trapezoid_method.py
-|   ├── Gauss elimination.py
-|   ├── Jacobi.py
-|   ├── Main.py
-|   ├── Gaussian Quadrature.py
-|   └── Secant_method.py
 ├── main.py                             // main file
 ├── requirements.txt                    // Project requirements - installation by python pip.
 ├── .gitignore                          // Files to not track in git.

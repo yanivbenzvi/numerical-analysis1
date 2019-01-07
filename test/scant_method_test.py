@@ -1,5 +1,5 @@
 import unittest
-from lib.scant_method import ScantMethod
+from lib.Scant_method import ScantMethod
 
 
 class ScantMethodTest(unittest.TestCase):

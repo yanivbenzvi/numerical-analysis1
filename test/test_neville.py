@@ -1,5 +1,5 @@
 from unittest import TestCase
-from lib.Neville import neville
+from lib.Neville_method import neville
 
 
 class TestNevilleIsNotNull(TestCase):
