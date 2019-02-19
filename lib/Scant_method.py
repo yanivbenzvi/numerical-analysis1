@@ -68,9 +68,17 @@ class ScantMethod:
 
 if __name__ == '__main__':
     f = lambda x: x ** 2 - 20
+
+
+    def f(x):
+        return x ** 2 - 20
+
+
+    collection1 = [1, 2, 3, 4, 5]
+
+    filter(lambda x: x % 2 == 0, collection1)
+
     ScantMethod.secant(f, 4.5, 0.1, 20)
-
-
 
     t1 = np.arange(-100, 100, 0.3)
     t2 = []
@@ -80,3 +88,4 @@ if __name__ == '__main__':
     plt.plot(t1, t2, '-r', label='f(x)=x^2 - 20')
     plt.legend(loc='upper left')
     plt.show()
+
